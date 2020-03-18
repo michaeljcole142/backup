@@ -1,0 +1,48 @@
+switch.hello_switch : 
+  friendly_name: Hello Switch
+  icon: mdi:access-point
+climate.first_floor :
+  friendly_name:  First Floor Thermostat
+  entity_picture: /local/images/thermostat-icon3.png
+climate.second_floor :
+  friendly_name: Second Floor Thermostat
+  entity_picture: /local/images/thermostat-icon3.png
+sensor.new_entry_motion:
+  friendly_name: 'Entry Motion Detector'
+  icon: mdi:run
+sensor.new_back_room:
+  friendly_name: 'Sun & Billiards Room Windows'
+  icon: mdi:window-closed
+sensor.new_dining_window:
+  friendly_name: 'Dining & Mud Room Windows'
+  icon: mdi:window-closed
+sensor.new_entry_door:
+  friendly_name: 'Front & Mud Room Doors'
+  icon: mdi:door
+sensor.new_kitchen_door_office_window:
+  friendly_name: 'Kitchen Door & Office Windows'
+  icon: mdi:door
+sensor.new_lving_window:
+  friendly_name: 'Living Room Windows'
+  icon: mdi:window-closed
+sensor.new_basement_sliding_door:
+  friendly_name: 'Basement Sliding Door'
+  icon: mdi:door
+sensor.new_basement_left_window:
+  friendly_name: 'Basement Left Window'
+  icon: mdi:window-closed
+sensor.new_basement_right_window:
+  friendly_name: 'Basement Right Window'
+  icon: mdi:window-closed
+sensor.new_garage_entry_door:
+  friendly_name: 'Garage Entry Door'
+  icon: mdi:door
+cover.sonoffSV01:
+  device_class: garage
+  friendly_name: 'Garage Door 1'
+cover.sonoffSV02:
+  device_class: garage
+  friendly_name: 'Garage Door 2'
+cover.sonoffSV03:
+  device_class: garage
+  friendly_name: 'Garage Door 3'

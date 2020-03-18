@@ -1,0 +1,165 @@
+default_view:
+  name: Home
+  view: yes
+  entities:
+    - group.Family
+    - group.Switches
+    - group.Thermostats
+    - group.Stairway_Christmas_Lights
+    - group.Christmas_Tree
+    - group.ControlPanel
+    - group.garage_doors
+    - group.outside_lights
+    - camera.amcrest_camera
+    - camera.ffmpeg
+    - group.BarnFlowMeter
+#    - camera.mjpeg_camera
+BarnFlowMeter:
+  name: BarnFlowMeter
+  entities:
+    - sensor.barn_flow_meter
+    
+ControlPanel:
+  name: OurSecurity
+  entities:
+    - input_select.alarm_notification_list
+    - alarm_control_panel.concord232
+    - sensor.new_back_room
+    - sensor.new_dining_window
+    - sensor.new_entry_door
+    - sensor.new_entry_motion
+    - sensor.new_kitchen_door_office_window
+    - sensor.new_lving_window
+    - sensor.new_basement_sliding_door
+    - sensor.new_basement_right_window
+    - sensor.new_basement_left_window
+    - sensor.new_garage_entry_door    
+   
+Thermostats:
+  name: Thermostats
+  entities:
+    - climate.first_floor   
+    - climate.second_floor
+
+Family:
+  name: Our Family
+  entities:
+    - device_tracker.billyiphone
+    - device_tracker.mikes_iphone
+    - device_tracker.stephiphone
+    - device_tracker.tayloriphone
+    - device_tracker.daniiphone
+    - device_tracker.billy_iphone_ping
+    - device_tracker.dani_iphone_ping
+    - device_tracker.stephanie_iphone_ping
+    - device_tracker.taylor_iphone_ping
+    - device_tracker.mike_iphone_ping
+Billy_Computers:
+  name: Billy Computers
+  entities:
+    - device_tracker.billy_ipad
+    - device_tracker.billychromebook
+Steph_Computers:
+  name: Steph Computers
+  entities:
+    - device_tracker.stephmac
+Mike_Computers:
+  name: Mike Computers
+  entities:
+    - device_tracker.stephaniepc
+    - device_tracker.hqit14470325l
+    - device_tracker.officepc
+    - device_tracker.mikesipad
+Taylor_Computers:
+  name: Taylor Computers
+  entities:
+    - device_tracker.taylors_macbook_air
+Personal_Computers:
+  name: Personal Computers
+  view: yes
+  entities:
+    - group.Billy_Computers
+    - group.Taylor_Computers
+    - group.Steph_Computers
+    - group.Mike_Computers
+#Christmas_Tree:
+#  name: Christmas Tree
+#  entities:
+#    - switch.wemo_plug_one
+    
+#Stairway_Christmas_Lights:
+#  name: Stairway Xmas Lights
+#  entities:
+#    - switch.wemo_plug_two
+#    - switch.wemo_plug_three
+#    - switch.wemo_plug_four
+outside_lights:
+  name: Outside Lights
+  entities:
+    - switch.landscape_lights_pool
+    - switch.patio_outside_lights
+    - switch.patio_inside_lights
+    - switch.landscape_lights_front
+    - switch.grill_lights
+    - switch.pool_light
+    - light.garage_door_patio_light
+    - light.garage_lights
+    - light.garage_outside_lights
+    
+
+Switches:
+  name: Switches
+  control: hidden
+  entities:
+    - switch.hello_switch
+#	- media_player.sharp_aquos_tv
+    - switch.wemo_plug_one
+    - switch.wemo_plug_two
+    - switch.wemo_plug_three
+    - switch.wemo_plug_four
+    - switch.sonoff_one
+    - switch.sonoff_two
+    - switch.sonoff_three
+    - switch.sonoff_four
+    - switch.sonoff_five
+    - switch.sonoff_six
+Home_Network:
+  name: Home Network
+  view: yes
+  entities:
+    - group.Home_Network_List
+    
+Home_Network_List:
+  name: Home Network List
+  entities:
+    - device_tracker.ha_pi
+    - device_tracker.alexa
+    - device_tracker.officeprinter
+    - device_tracker.colerouter
+    - device_tracker.tlwa860re
+    - device_tracker.concord232
+    - device_tracker.thermostat_first_floor
+    - device_tracker.thermostat_second_floor
+    - device_tracker.sonoffsv01
+    - device_tracker.sonoffsv02
+    - device_tracker.sonoff1
+    - device_tracker.sonoff2
+    - device_tracker.sonoff3
+    - device_tracker.sonoff5
+    
+Home_Entertainment:
+  name: Home Entertainment
+  view: yes
+  entities:
+    - device_tracker.xboxsystemos
+    - device_tracker.vip722_dvr_r0086972247
+
+garage_doors:
+  name: Garage Doors
+  view: no
+  control: hidden
+  icon: mdi:garage
+  entities:
+    - cover.sonoffSV01
+    - cover.sonoffSV02
+    - cover.sonoffSV03

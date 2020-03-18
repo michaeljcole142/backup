@@ -1,0 +1,75 @@
+sensor.mikes_iphone_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_mikes_iphone
+sensor.iphone_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_iphone
+sensor.taylors_iphone_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_taylors_iphone
+sensor.iphone_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_iphone
+sensor.taylors_iphone_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_taylors_iphone
+sensor.danis_iphone_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_danis_iphone
+sensor.danis_iphone_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_danis_iphone
+sensor.ipad_2_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_ipad
+sensor.ipad_2_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_ipad
+sensor.mikes_iphone_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_mikes_iphone
+switch.wemo_plug_two:
+  config_entry_id:
+  name:
+  platform: wemo
+  unique_id: 221737K0116CCE
+switch.wemo_plug_three:
+  config_entry_id:
+  name:
+  platform: wemo
+  unique_id: 221737K0111B6C
+switch.wemo_plug_one:
+  config_entry_id:
+  name:
+  platform: wemo
+  unique_id: 221737K0117AA5
+switch.wemo_plug_four:
+  config_entry_id:
+  name:
+  platform: wemo
+  unique_id: 221738K0106BEF
+media_player.taylor_roses_roku:
+  config_entry_id:
+  name:
+  platform: roku
+  unique_id: YJ00GD437283

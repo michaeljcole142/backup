@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+echo "Preparing Hass"
+sudo su -s /bin/bash homeassistant
+echo "cd"
+cd /srv/homeassistant
+echo "python3"
+python3 -m venv .
+echo "source"
+source bin/activate
+
+echo "Starting Hass"
+hass

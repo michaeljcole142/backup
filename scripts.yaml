@@ -1,0 +1,6 @@
+test_push:
+  alias: 'test_push'
+  sequence:
+    - service: notify.ios_mikes_iphone
+      data:
+        message: 'this is a test'

@@ -1,0 +1,350 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 40.6029
+  longitude: -74.9678
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+  # Customization file
+  customize: !include customize.yaml
+#
+# ios
+#
+ios:
+#
+#  This is where garage door sonoffsv are
+#
+cover:
+  - platform: mqtt
+    name: "sonoffSV01"
+    state_topic: "cmnd/2/POWER2"
+    command_topic: "cmnd/sonoffSV01/POWER"
+    payload_open: "ON"
+    payload_close: "ON"
+    payload_stop: "ON"
+    state_open: "ON"
+    state_closed: "OFF"
+    optomistic: false
+    retain: false
+    
+    
+#
+# Notification mechanisms.
+#
+notify:
+  - name: HomeAssistantEmail
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: !secret gmail_user
+
+    username: !secret gmail_user
+    password: !secret gmail_password
+    recipient:
+      - !secret gmail_user
+  - name: IosPush
+    platform: ios
+    target: 9f7fcdd7-5293-3e93-857e-00c2cab2aab0
+    
+# Show links to resources in log and frontend
+introduction:
+
+climate:
+  - platform: honeywell
+    username: michaeljcole142@gmail.com
+    password: !secret honeywell_password
+    scan_interval: 600
+    region: us
+    
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+#media_player:
+#  - platform: aquostv
+#    host: 192.168.3.145
+#   power_on_enabled: True
+#camera:
+#  - platform: mjpeg
+#    name: test camera
+#    mjpeg_url: http://192.168.3.136:8020
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  base_url: colehomeassistant.duckdns.org:8123
+  ssl_certificate: /etc/letsencrypt/live/colehomeassistant.duckdns.org/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/colehomeassistant.duckdns.org/privkey.pem
+#  ip_ban_enabled: True
+#  login_attempts_threshold: 10
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+
+#updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+wemo:
+  static:
+    - 192.168.3.121
+    - 192.168.3.13
+    - 192.168.3.105
+    - 192.168.3.10
+    
+
+alexa:
+
+intent_script:
+    HAPlugOneOn:
+      action:
+        service: switch.turn_on
+        entity_id: switch.ha_plug_one      
+      speech:
+        type: plain
+        text: super plug is now on
+    HAPlugOneOff:
+      action:
+        service: switch.turn_off
+        entity_id: switch.ha_plug_one
+      speech:
+        type: plain
+        text: super plug is now off
+    HelloSwitchOn:
+      action:
+        service: switch.turn_on
+        entity_id: switch.hello_switch
+      speech:
+        type: plain
+        text: Yes it is on
+    HelloSwitchOff:
+      action:
+        service: switch.turn_off
+        entity_id: switch.hello_switch
+      speech:
+         type: plain
+         text:  Yes it is off
+# Text to speech
+#tts:
+#  - platform: google
+
+
+  
+  
+  
+  
+  
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+# Router Configuration
+
+device_tracker:
+  - platform: netgear
+    host: 192.168.3.1
+    username: admin
+    password: !secret router_password
+    interval_seconds: 10
+    consider_home: 180
+    track_new_devices: yes
+    
+  - platform: owntracks
+  
+  - platform: ping
+    interval_seconds: 30
+    consider_home: 1200
+    hosts: 
+      billy_iphone_ping: 192.168.3.116
+      stephanie_iphone_ping: 192.168.3.124
+      dani_iphone_ping: 192.168.3.122
+      taylor_iphone_ping: 192.168.3.120
+      mike_iphone_ping: 192.168.3.128
+      
+#  - platform: bluetooth_tracker
+  
+switch:
+  - platform: switch_example
+    file_path: /tmp/hello_switch
+    
+  - platform: mqtt
+    name: "Sonoff One"
+    command_topic: "cmnd/sonoff1/power"
+    state_topic: "stat/sonoff1/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  
+  - platform: mqtt
+    name: "Sonoff Two"
+    command_topic: "cmnd/sonoff2/power"
+    state_topic: "stat/sonoff2/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+ 
+  - platform: mqtt
+    name: "Sonoff Three"
+    command_topic: "cmnd/sonoff3/power"
+    state_topic: "stat/sonoff3/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  
+  - platform: mqtt
+    name: "Sonoff Four"
+    command_topic: "cmnd/sonoff4/power"
+    state_topic: "stat/sonoff4/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    
+  - platform: mqtt
+    name: "Sonoff Five"
+    command_topic: "cmnd/sonoff5/power"
+    state_topic: "stat/sonoff5/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+#emulated_hue:
+#  host_ip: 192.168.3.119
+#  listen_port: 8300
+#  expose_by_default: true
+
+#alarm_control_panel:
+#  - platform: concord232
+#    host: 192.168.3.3
+#binary_sensor:
+#  - platform: concord232
+#    device_class: door
+#    host: 192.168.3.3
+    
+#
+# The concord232 sets the sensor values backwards. This template flips the values.
+#
+sensor:
+  platform: template
+  sensors:
+    new_entry_motion:
+      value_template: >-
+        {% if is_state('binary_sensor.entry_motion','on') %}
+          Off
+        {% elif is_state('binary_sensor.entry_motion','off') %}
+          Triggered
+        {% else %}
+          n/a
+        {% endif %}
+    new_back_room:
+      value_template: >-
+        {% if is_state('binary_sensor.back_room','on') %}
+          Closed
+        {% elif is_state('binary_sensor.back_room','off') %}
+          Open
+        {% else %}
+          n/a
+        {% endif %}
+    new_dining_window:
+      value_template: >-
+        {% if is_state('binary_sensor.dining_window','on') %}
+          Closed
+        {% elif is_state('binary_sensor.dining_window','off') %}
+          Open
+        {% else %}
+          n/a
+        {% endif %}
+    new_entry_door:
+      value_template: >-
+        {% if is_state('binary_sensor.entry_door','on') %}
+          Closed
+        {% elif is_state('binary_sensor.entry_door','off') %}
+          Open
+        {% else %}
+          n/a
+        {% endif %}
+    new_kitchen_door_office_window:
+      value_template: >-
+        {% if is_state('binary_sensor.kitchen_sliding_door_office_window','on') %}
+          Closed
+        {% elif is_state('binary_sensor.kitchen_sliding_door_office_window','off') %}
+          Open
+        {% else %}
+          n/a
+        {% endif %}
+    new_lving_window:
+      value_template: >-
+        {% if is_state('binary_sensor.lving_window','on') %}
+          Closed
+        {% elif is_state('binary_sensor.lving_window','off') %}
+          Open
+        {% else %}
+          n/a
+        {% endif %}
+        
+        
+mqtt:
+#  broker: m14.cloudmqtt.com
+#  port: 11025
+#  client_id: ha1
+#  username: ColeHomeAssistant
+#  password: !secret mqtt_password
+#  keepalive: 60
+  broker: 192.168.3.119
+  port: 1883
+  client_id: home-assistant-1
+  username: hassmq
+  password: hassmq
+zone:
+  - name: colehome
+    latitude: 40.6029
+    longitude: -74.9678
+    radius: 300
+
+input_select:
+  alarm_notification_list:
+    name: Alarm Notification Setting
+    options:
+      - None
+      - All
+      - Motion Only
+      - Doors Only
+      - Windows Only
+      - Doors and Windows
+      
+#
+# Duck DNS ip address update
+#
+#duckdns:
+#  domain: colehomeassistant.duckdns.org
+#  access_token: 345c9e2d-6711-437a-96e8-cb6e906bbc5a

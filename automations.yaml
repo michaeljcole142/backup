@@ -1,0 +1,297 @@
+- alias: Notify.HelloSwitchTurnedOn
+  trigger:
+    platform: state
+    entity_id: switch.hello_switch
+    from: 'off'
+    to: 'on'
+  action:
+    service: notify.ios_mikes_iphone
+    data:
+      message: Hello Switch Turned On
+  id: 62e8db893b6c4b64857e02c2f1d9a53e
+- alias: Notify.HelloSwitchTurnedOff
+  trigger:
+    platform: state
+    entity_id: switch.hello_switch
+    from: 'on'
+    to: 'off'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Hello Switch Turned Off
+  - service: notify.HomeAssistantEmail
+    data:
+      title: Hello Switch
+      message: Was Turned Off
+  id: 41999bcd9b8e460a9124f7556f63763d
+- alias: Notify.BasementSlidingDoorOpened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.basement_sliding_door
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Doors Only", "Doors and Windows"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Basement Sliding Door Opened
+  id: dae3ae9d78ce4869938a2cb65b6675fd
+- alias: Notify.GarageEntryDoorOpened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.garage_entry_door
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Doors Only", "Doors and Windows"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Garage Entry Door Opened
+  id: 007fc767b330453eb25f2398718f16a6
+- alias: Notify.BasementLeftWindowOpened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.basement_left_window
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Windows Only", "Doors and Windows"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Basement Left Window Opened
+  id: f5c38498f08640f080f8e549f0736f4a
+- alias: Notify.BasementRightWindowOpened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.basement_right_window
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Windows Only", "Doors and Windows"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Basement Right Window Opened
+  id: c9a870d1006a4446a8b86faf246a4757
+- alias: Notify.LivingRoomWindowsOpened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.lving_window
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Windows Only", "Doors and Windows"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Livingroom Windows Opened
+  id: 9ef75fd169754e0b9fa091777684c75d
+- alias: Notify.BackRoomWindowsOpened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.back_room
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Windows Only", "Doors and Windows"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Billards or Sun Room Windows Opened
+  id: dc6aa07d6ca24c9392570cbe6e9c1447
+- alias: Notify.SliderOpened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_sliding_door_office_window
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Doors Only", "Doors and Windows"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Kitchen Sling Door or Office Windows Opened
+  id: 97dc42a58209483bb23accd117381b89
+- alias: Notify.DiningWindowOpened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.dining_window
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Windows Only", "Doors and Windows"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Dining Room or Mud Room Windows Opened
+  id: 0bba180efaa84e5a82d199b2af4f1993
+- alias: Notify.EntryMotion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.entry_motion
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Motion Only"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Entryway Motion Detector Triggered
+  id: b419c99f98af4057870427730501bcf8
+- alias: Notify.EntryDoorOpened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.entry_door
+    to: 'off'
+  condition:
+  - condition: template
+    value_template: '{{ states("input_select.alarm_notification_list") in ["All",
+      "Doors Only", "Doors and Windows"] }}'
+  action:
+  - service: notify.ios_mikes_iphone
+    data:
+      message: Front Door or Mud Room Door Opened
+  id: 6274c0b5da8b42f5a1fce5a7ff8317fc
+- id: '1522033336862'
+  alias: SonoffSV01
+  trigger:
+  - payload: 'ON'
+    platform: mqtt
+    topic: stat/sonoffSV01/POWER
+  condition: []
+  action:
+  - delay: 00:00:03
+  - data:
+      payload: 'OFF'
+      topic: cmnd/sonoffSV01/POWER
+    service: mqtt.publish
+- id: '1525007374409'
+  alias: SonoffSV02
+  trigger:
+  - payload: 'ON'
+    platform: mqtt
+    topic: stat/sonoffSV02/POWER
+  condition: []
+  action:
+  - delay: 00:00:03
+  - data:
+      payload: 'OFF'
+      topic: cmnd/sonoffSV02/POWER
+    service: mqtt.publish
+- action:
+  - alias: Notify Mike's IPhone
+    data:
+      message: Garage Door 1 Open after 9PM
+    service: notify.ios_mikes_iphone
+  alias: GarageDoor1OpenLate
+  condition:
+  - condition: state
+    entity_id: cover.sonoffsv01
+    state: open
+  id: '1531881934116'
+  trigger:
+  - at: '21:00'
+    platform: time
+- action:
+  - alias: Notify Mike's IPhone
+    data:
+      message: Garage Door 2 Open after 9PM
+    service: notify.ios_mikes_iphone
+  alias: GarageDoor2OpenLate
+  condition:
+  - condition: state
+    entity_id: cover.sonoffsv02
+    state: open
+  trigger:
+  - at: '21:00'
+    platform: time
+  id: a4d95193fed748a2bbd008c377877ab8
+- id: '1534908546337'
+  alias: Trigger Garage Door State On Restart
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - alias: ''
+    data:
+      payload: 'OFF'
+      topic: cmnd/sonoffSV02-2/POWER2
+    service: mqtt.publish
+  - data:
+      payload: 'OFF'
+      topic: cmnd/sonoffSV01-2/POWER2
+    service: mqtt.publish
+- id: '1536713657613'
+  alias: SonoffSV03
+  trigger:
+  - payload: 'ON'
+    platform: mqtt
+    topic: stat/sonoffSV03/POWER
+  condition: []
+  action:
+  - delay: 00:00:01
+  - data:
+      payload: 'OFF'
+      topic: cmnd/sonoffSV03/POWER
+    service: mqtt.publish
+- id: '1537412789996'
+  alias: FoyerEntry
+  trigger:
+  - entity_id: device_tracker.mikes_iphone
+    event: enter
+    platform: zone
+    zone: zone.beacon_1_ha
+  condition: []
+  action:
+  - data:
+      message: Welcome to the Foyer
+    service: notify.ios_mikes_iphone
+- id: '1537413029377'
+  alias: FoyerLeave
+  trigger:
+  - entity_id: device_tracker.mikes_iphone
+    event: leave
+    platform: zone
+    zone: zone.beacon_1_ha
+  condition: []
+  action:
+  - data:
+      message: Leaving Foyer.  Bye!
+    service: notify.ios_mikes_iphone
+- id: '1537413129324'
+  alias: LivingRoomEntry
+  trigger:
+  - entity_id: device_tracker.mikes_iphone
+    event: enter
+    platform: zone
+    zone: zone.beacon_2_ha
+  condition: []
+  action:
+  - data:
+      message: Welcome to the Living Room
+    service: notify.ios_mikes_iphone
+- id: '1537413238219'
+  alias: LivingRoomLeave
+  trigger:
+  - entity_id: device_tracker.mikes_iphone
+    event: leave
+    platform: zone
+    zone: zone.beacon_2_ha
+  condition: []
+  action:
+  - data:
+      message: Leaving Living Room
+    service: notify.ios_mikes_iphone

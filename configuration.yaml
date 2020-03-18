@@ -1,0 +1,493 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 40.6029
+  longitude: -74.9678
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+  # Customization file
+  customize: !include customize.yaml
+#
+# ios
+#
+ios:
+#
+#  This is where garage door sonoffsv are
+#
+cover:
+  - platform: mqtt
+    name: "sonoffSV01"
+    state_topic: "cmnd/sonoffSV01-2/POWER2"
+    command_topic: "cmnd/sonoffSV01/POWER"
+    payload_open: "ON"
+    payload_close: "ON"
+    payload_stop: "ON"
+    state_open: "ON"
+    state_closed: "OFF"
+    optomistic: false
+    retain: false
+  
+  - platform: mqtt
+    name: "sonoffSV02"
+    state_topic: "cmnd/sonoffSV02-2/POWER2"
+    command_topic: "cmnd/sonoffSV02/POWER"
+    payload_open: "ON"
+    payload_close: "ON"
+    payload_stop: "ON"
+    state_open: "ON"
+    state_closed: "OFF"
+    optomistic: false
+    retain: false
+ 
+  - platform: mqtt
+    name: "sonoffSV03"
+    state_topic: "cmnd/sonoffSV03-2/POWER2"
+    command_topic: "cmnd/sonoffSV03/POWER"
+    payload_open: "ON"
+    payload_close: "ON"
+    payload_stop: "ON"
+    state_open: "ON"
+    state_closed: "OFF"
+    optomistic: false
+    retain: false
+
+#
+# Homekit is the ios home bridge
+#
+homekit:
+  filter:
+    include_domains:
+      - cover
+      - switch
+      - binary_sensor
+    exclude_entities:
+      - binary_sensor.garage_door_1
+      - binary_sensor.garage_door_2      
+      - cover.sonoffsv03
+      - binary_sensor.u2
+      - binary_sensor.u1
+      - switch.hello_switch
+      
+#
+# Notification mechanisms.
+#
+notify:
+  - name: HomeAssistantEmail
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: !secret gmail_user
+
+    username: !secret gmail_user
+    password: !secret gmail_password
+    recipient:
+      - !secret gmail_user
+  - name: IosPush
+    platform: ios
+    target: 9f7fcdd7-5293-3e93-857e-00c2cab2aab0
+    
+# Show links to resources in log and frontend
+introduction:
+
+climate:
+  - platform: honeywell
+    username: michaeljcole142@gmail.com
+    password: !secret honeywell_password
+    scan_interval: 600
+    region: us
+    
+# Enables the frontend
+frontend:
+
+
+# Enables configuration UI
+config:
+#media_player:
+#  - platform: aquostv
+#    host: 192.168.3.145
+#   power_on_enabled: True
+camera:
+  - platform: amcrest
+
+#  - platform: mjpeg
+#    name: test camera
+#    mjpeg_url: http://192.168.3.136:8020
+
+  - platform: ffmpeg
+    input: 'rtsp://admin:142300@192.168.3.25:554/cam/realmonitor?channel=1&subtype=1'
+  
+#  - platform: mjpeg
+#    mjpeg_url: 'http://192.168.3.25:37779/cgi-bin/mjpg/video.cgi?channel=1&subtype=1'
+#    username: admin
+#    password: 142300
+    
+    
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # UNCOMMENT THESE 3
+  base_url: http://192.168.3.19:8123
+#  base_url: colehomeassistant.duckdns.org:8123
+
+#  ssl_certificate: /etc/letsencrypt/live/colehomeassistant.duckdns.org/fullchain.pem
+#  ssl_key: /etc/letsencrypt/live/colehomeassistant.duckdns.org/privkey.pem
+
+#  ip_ban_enabled: True
+#  login_attempts_threshold: 10
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+wemo:
+  static:
+    - 192.168.3.21
+    - 192.168.3.18
+    - 192.168.3.5
+    - 192.168.3.2
+    
+
+alexa:
+
+intent_script:
+    HAPlugOneOn:
+      action:
+        service: switch.turn_on
+        entity_id: switch.ha_plug_one      
+      speech:
+        type: plain
+        text: super plug is now on for sure
+    HAPlugOneOff:
+      action:
+        service: switch.turn_off
+        entity_id: switch.ha_plug_one
+      speech:
+        type: plain
+        text: super plug is now off
+    HelloSwitchOn:
+      action:
+        service: switch.turn_on
+        entity_id: switch.hello_switch
+      speech:
+        type: plain
+        text: Yes it is on
+    HelloSwitchOff:
+      action:
+        service: switch.turn_off
+        entity_id: switch.hello_switch
+      speech:
+         type: plain
+         text:  Yes it is off
+# Text to speech
+#tts:
+#  - platform: google
+
+
+  
+  
+  
+  
+  
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+# Router Configuration
+
+device_tracker:
+  - platform: netgear
+    host: 192.168.3.1
+    username: admin
+    password: !secret router_password
+    interval_seconds: 10
+    consider_home: 180
+    track_new_devices: no
+    
+  - platform: owntracks
+#    waypoints: true
+    
+  - platform: ping
+    interval_seconds: 30
+    consider_home: 1200
+    hosts: 
+      billy_iphone_ping: 192.168.3.23
+      stephanie_iphone_ping: 192.168.3.124
+      dani_iphone_ping: 192.168.3.122
+      taylor_iphone_ping: 192.168.3.120
+      mike_iphone_ping: 192.168.3.36
+
+# Leviton lights
+light:
+  - platform: decora_wifi
+    username: michaeljcole142@gmail.com
+    password: MikeCole@142
+    
+#  - platform: bluetooth_tracker
+  
+switch:
+  - platform: switch_example
+    file_path: /tmp/hello_switch
+    
+  - platform: mqtt
+    name: "Patio Inside Lights"
+    command_topic: "cmnd/sonoff1/power"
+    state_topic: "stat/sonoff1/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+  
+  - platform: mqtt
+    name: "Landscape Lights Pool"
+    command_topic: "cmnd/sonoff2/power"
+    state_topic: "stat/sonoff2/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+ 
+  - platform: mqtt
+    name: "Landscape Lights Front"
+    command_topic: "cmnd/sonoff3/power"
+    state_topic: "stat/sonoff3/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+  
+  - platform: mqtt
+    name: "Grill Lights"
+    command_topic: "cmnd/sonoff4/power"
+    state_topic: "stat/sonoff4/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+    
+  - platform: mqtt
+    name: "Patio Outside Lights"
+    command_topic: "cmnd/sonoff5/power"
+    state_topic: "stat/sonoff5/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+    
+  - platform: mqtt
+    name: "Pool Light"
+    command_topic: "cmnd/sonoff6/power"
+    state_topic: "stat/sonoff6/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+#emulated_hue:
+#  host_ip: 192.168.3.119
+#  listen_port: 8300
+#  expose_by_default: true
+
+alarm_control_panel:
+  - platform: concord232
+    host: 192.168.3.11
+binary_sensor:
+  - platform: concord232
+    device_class: door
+    host: 192.168.3.11
+    
+  - platform: ping
+    host: 192.168.3.24
+    name: "Garage Door 1"
+  - platform: ping
+    host: 192.168.3.21
+    name: "Garage Door 2"
+amcrest:
+  - host: 192.168.3.25
+    username: admin
+    password: 142300
+    port: 37779
+    stream_source: snapshot
+    
+
+      
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+  
+#
+# The concord232 sets the sensor values backwards. This template flips the values.
+#
+sensor:
+  - platform: mqtt
+    state_topic: FlowMeter
+    name: "Barn Flow Meter"
+    unit_of_measurement: "L/m"
+    
+  - platform: template
+    sensors:
+      new_entry_motion:
+        value_template: >-
+          {% if is_state('binary_sensor.entry_motion','off') %}
+            Off
+          {% elif is_state('binary_sensor.entry_motion','on') %}
+            Triggered
+          {% else %}
+            n/a
+          {% endif %}
+      new_back_room:
+        value_template: >-
+          {% if is_state('binary_sensor.back_room','off') %}
+            Closed
+          {% elif is_state('binary_sensor.back_room','on') %}
+            Open
+          {% else %}
+            n/a
+          {% endif %}
+      new_dining_window:
+        value_template: >-
+          {% if is_state('binary_sensor.dining_window','off') %}
+            Closed
+          {% elif is_state('binary_sensor.dining_window','on') %}
+            Open
+          {% else %}
+            n/a
+          {% endif %}
+      new_entry_door:
+        value_template: >-
+          {% if is_state('binary_sensor.entry_door','off') %}
+            Closed
+          {% elif is_state('binary_sensor.entry_door','on') %}
+            Open
+          {% else %}
+            n/a
+          {% endif %}
+      new_kitchen_door_office_window:
+        value_template: >-
+          {% if is_state('binary_sensor.kitchen_sliding_door_office_window','off') %}
+            Closed
+          {% elif is_state('binary_sensor.kitchen_sliding_door_office_window','on') %}
+            Open
+          {% else %}
+            n/a
+          {% endif %}
+      new_lving_window:
+        value_template: >-
+          {% if is_state('binary_sensor.lving_window','off') %}
+            Closed
+          {% elif is_state('binary_sensor.lving_window','on') %}
+            Open
+          {% else %}
+            n/a
+          {% endif %}
+      new_basement_sliding_door:
+        value_template: >-
+          {% if is_state('binary_sensor.basement_sliding_door','off') %}
+            Closed
+          {% elif is_state('binary_sensor.basement_sliding_door','on') %}
+            Open
+          {% else %}
+            n/a
+          {% endif %}   
+      new_basement_left_window:
+        value_template: >-
+          {% if is_state('binary_sensor.basement_left_window','off') %}
+            Closed
+          {% elif is_state('binary_sensor.basement_left_window','on') %}
+            Open
+          {% else %}
+            n/a
+          {% endif %}     
+      new_basement_right_window:
+        value_template: >-
+          {% if is_state('binary_sensor.basement_right_window','off') %}
+            Closed
+          {% elif is_state('binary_sensor.basement_right_window','on') %}
+            Open
+          {% else %}
+            n/a
+          {% endif %} 
+      new_garage_entry_door:
+        value_template: >-
+          {% if is_state('binary_sensor.garage_entry_door','off') %}
+            Closed
+          {% elif is_state('binary_sensor.garage_entry_door','on') %}
+            Open
+          {% else %}
+            n/a
+          {% endif %}   
+mqtt:
+#  broker: m14.cloudmqtt.com
+#  port: 11025
+#  client_id: ha1
+#  username: ColeHomeAssistant
+#  password: !secret mqtt_password
+#  keepalive: 60
+  broker: 192.168.3.19
+  port: 1883
+  client_id: home-assistant-1
+  username: hassmq
+  password: hassmq
+zone:
+  - name: colehome
+    latitude: 40.6029
+    longitude: -74.9678
+    radius: 300
+    
+  - name: 'beacon_1_HA'
+    latitude: 40.604882771187
+    longitude: -74.967985628243
+    radius: 5
+  
+  - name: 'beacon_2_HA'
+    latitude: 40.604914957695
+    longitude: -74.967985628243
+    radius: 5
+    
+
+input_select:
+  alarm_notification_list:
+    name: Alarm Notification Setting
+    options:
+      - None
+      - All
+      - Motion Only
+      - Doors Only
+      - Windows Only
+      - Doors and Windows
+      
+#
+# Duck DNS ip address update
+#
+# UNCOMMENT BELOW
+duckdns:
+  domain: colehomeassistant.duckdns.org
+  access_token: 345c9e2d-6711-437a-96e8-cb6e906bbc5a

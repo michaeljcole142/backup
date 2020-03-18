@@ -1,0 +1,1279 @@
+#
+#
+# Routers
+#
+colerouter2g:
+  hide_if_away: false
+  icon: mdi:router-wireless
+  mac: 9C:3D:CF:16:50:FF
+  name: ColeRouter2G
+  picture:
+  track: true
+  vendor: Cisco-Linksys, LLC
+tlwa860re:
+  hide_if_away: false
+  icon: mdi:radio-tower
+  mac: A4:2B:B0:F8:A9:8A
+  name: Wifi Extender
+  picture:
+  track: true
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD. 
+#
+# phones
+#
+billyiphone:
+  hide_if_away: false
+  icon:
+  mac: 5C:1D:D9:7A:1E:48
+  name: Billy's iPhone
+  picture: /local/images/BillyPic.jpg
+  track: true
+  vendor: unknown
+  
+billy_iphone_ping:
+  hide_if_away: false
+  icon:
+  name: Billy's iPhone Ping
+  picture: /local/images/BillyPic.jpg
+  track: true
+  vendor: unknown
+  
+mikes_iphone:
+  hide_if_away: false
+  icon:
+  mac: 70:EF:00:A4:6A:F4
+  name: Mike's iPhone
+  picture: /local/images/MikePic.PNG
+  track: true
+  vendor: Apple, Inc.
+
+stephiphone:
+  hide_if_away: false
+  icon:
+  mac: 84:89:AD:8C:D3:A4
+  name: Steph's iPhone
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+tayloriphone:
+  hide_if_away: false
+  icon:
+  mac: BC:A9:20:92:3A:44
+  name: Taylor's iPhone
+  picture: /local/images/TaylorPic.png
+  track: true
+  vendor: Apple, Inc.
+ 
+daniiphone:
+  hide_if_away: false
+  icon:
+  mac: 84:41:67:7D:37:93
+  name: Dani's iPhone
+  picture: /local/images/DaniPic.jpg
+  track: true
+  vendor: unknown
+#
+#
+# Plugs
+#
+wemo_mini_1:
+  hide_if_away: false
+  icon: mdi:power-socket-us
+  mac: 58:EF:68:EE:9F:D9
+  name: Plug One
+  picture:
+  track: true
+  vendor: Belkin International Inc.
+wemo_mini_2:
+  hide_if_away: false
+  icon: mdi:power-socket-us
+  mac: 58:EF:68:EE:68:7D
+  name: Plug Two
+  picture:
+  track: true
+  vendor: Belkin International Inc.
+wemo_mini_3:
+  hide_if_away: false
+  icon: mdi:power-socket-us
+  mac: 58:EF:68:ED:21:65
+  name: Plug Three
+  picture:
+  track: true
+  vendor: Belkin International Inc.
+wemo_mini_4:
+  hide_if_away: false
+  icon: mdi:power-socket-us
+  mac: 58:EF:68:F0:7F:81
+  name: Plug Four
+  picture:
+  track: true
+  vendor: Belkin International Inc.
+  
+#
+#
+# Servers, printers, utils
+#
+ha_pi:
+  hide_if_away: false
+  icon: mdi:home-assistant
+  mac: B8:27:EB:EF:07:5C
+  name: HA Server
+  picture:
+  track: true
+  vendor: RaspberryPi
+
+alexa:
+  hide_if_away: false
+  icon:
+  mac: 88:71:E5:CB:0A:40
+  name: Alexa
+  picture: /local/images/AlexaPic2.PNG
+  track: true
+  vendor: Amazon Technologies Inc.
+
+officeprinter:
+  hide_if_away: false
+  icon: mdi:printer
+  mac: D8:49:2F:3D:EE:02
+  name: Office Printer
+  picture:
+  track: true
+  vendor: unknown
+
+concord232:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:E4:B0:3A
+  name: Concord232 Server
+  picture:
+  track: true
+
+nvrp:
+  hide_if_away: false
+  icon:
+  mac: 9C:8E:CD:12:10:1B
+  name: NVR-P
+  picture:
+  track: true
+
+
+#
+#
+# ipads, laptops, computers.
+#
+billy_ipad:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 98:E0:D9:B5:DF:2A
+  name: Billy's iPad
+  picture:
+  track: true
+  vendor: Apple, Inc.
+ 
+taylors_macbook_air:
+  hide_if_away: false
+  icon: mdi:laptop-mac
+  mac: 5C:F9:38:9F:35:88
+  name: Taylor’s MacBook Air
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+stephaniepc:
+  hide_if_away: false
+  icon: mdi:laptop-windows
+  mac: E0:06:E6:A0:DE:5A
+  name: Steph Dell Laptop
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
+hqit14470325l:
+  hide_if_away: false
+  icon: mdi:laptop-windows
+  mac: B4:B6:76:82:D0:1B
+  name: MS Laptop
+  picture:
+  track: true
+officepc:
+  hide_if_away: false
+  icon: mdi:desktop-classic
+  mac: D4:BE:D9:E1:B4:33
+  name: Office PC
+  picture:
+  track: true
+  vendor: unknown
+stephmac:
+  hide_if_away: false
+  icon: mdi:laptop-mac
+  mac: 9C:F3:87:A5:96:36
+  name: Steph's Mac
+  picture:
+  track: true
+  vendor: Apple, Inc. 
+billychromebook:
+  hide_if_away: false
+  icon: mdi:laptop-chromebook
+  mac: 88:78:73:01:5A:A4
+  name: Billy's Chromebook
+  picture:
+  track: true
+  vendor: Intel Corporate
+mikesipad:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 1C:9E:46:68:C2:FA
+  name: Mike's iPad
+  picture:
+  track: true
+  vendor: unknown
+
+#
+# Entertainment
+#
+xboxsystemos:
+  hide_if_away: false
+  icon: mdi:xbox
+  mac: 28:18:78:E8:BD:08
+  name: Xbox-SystemOS
+  picture:
+  track: true
+  vendor: Microsoft Corporation
+vip722_dvr_r0086972247:
+  hide_if_away: false
+  icon:
+  mac: 28:C6:8E:55:74:83
+  name: Dish DVR
+  picture: /local/images/DVRPic2.PNG
+  track: true
+  vendor: NETGEAR
+
+#
+#
+# other
+#
+3c0429731c3f44278f69fa3e47936956:
+  hide_if_away: false
+  icon:
+  mac: 94:44:44:3B:73:FD
+  name: TV Living Room
+  picture:
+  track: true
+  vendor: unknown
+
+####################
+
+officepc_2:
+  hide_if_away: false
+  icon:
+  mac: E0:06:E6:6F:D9:50
+  name: OFFICE-PC
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
+
+
+
+#
+# Thermostats
+#
+
+thermostat_first_floor:
+  hide_if_away: false
+  icon:
+  mac: 00:D0:2D:90:4E:54
+  name: Thermostat (First Floor)
+  picture: /local/images/HoneywellThermostat.PNG
+  track: true
+  vendor: ADEMCO
+
+thermostat_second_floor:
+  hide_if_away: false
+  icon:
+  mac: 00:D0:2D:A8:DA:22
+  name: Thermostat (Second Floor)
+  picture: /local/images/HoneywellThermostat.PNG
+  track: true
+  vendor: ADEMCO
+#
+# Garage Door Openers
+#
+sonoffsv01:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:66:9B:36
+  name: Garage Door 1 Opener
+  picture:
+  track: true
+
+
+sonoffsv02:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:66:9B:A7
+  name: Garage Door 2 Opener
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+#
+# Lights
+#
+sonoff2:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:A7:D3:8D
+  name: "Landscape Lights Pool"
+  picture:
+  track: true
+  vendor: unknown
+sonoff1:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:A7:BC:40
+  name: "Patio Inside Lights"
+  picture:
+  track: true
+
+sonoff5:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:A7:EE:B9
+  name: "Patio Outside Lights"
+  picture:
+  track: true
+
+sonoff3:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:A7:D0:B3
+  name: "Landscape Lights Front"
+  picture:
+  track: true
+
+bose_soundlink_mobile_speaker_ii:
+  hide_if_away: false
+  icon:
+  mac: BT_00:0C:8A:CC:E7:99
+  name: Bose SoundLink Mobile speaker II
+  picture:
+  track: true
+  vendor: unknown
+
+
+superstar_monster_blaster:
+  hide_if_away: false
+  icon:
+  mac: BT_10:B7:F6:2A:3C:F8
+  name: SuperStar Monster Blaster
+  picture:
+  track: true
+  vendor: unknown
+
+tv_samsung_6_series_65:
+  hide_if_away: false
+  icon:
+  mac: BT_7C:64:56:1A:22:D8
+  name: '[TV] Samsung 6 Series (65)'
+  picture:
+  track: true
+  vendor: unknown
+
+
+siri_2:
+  hide_if_away: false
+  icon:
+  mac: BT_70:EF:00:28:FA:F8
+  name: Siri (2)
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+xt1585:
+  hide_if_away: false
+  icon:
+  mac: BT_CC:61:E5:8E:7C:20
+  name: XT1585
+  picture:
+  track: true
+  vendor: Motorola Mobility LLC, a Lenovo Company
+
+
+
+xboxone_2:
+  hide_if_away: false
+  icon:
+  mac: F0:6E:0B:A8:EA:E3
+  name: XboxOne
+  picture:
+  track: true
+  vendor: Microsoft Corporation
+
+
+
+laptop131a11h3:
+  hide_if_away: false
+  icon:
+  mac: 00:E1:8C:DF:DE:41
+  name: LAPTOP-131A11H3
+  picture:
+  track: false
+
+iphone:
+  hide_if_away: false
+  icon:
+  mac: 5C:1D:D9:8B:F7:E0
+  name: iPhone
+  picture:
+  track: false
+
+xboxone:
+  hide_if_away: false
+  icon:
+  mac: 2C:54:91:7C:B3:5D
+  name: XboxOne
+  picture:
+  track: false
+
+iphone_2:
+  hide_if_away: false
+  icon:
+  mac: 5C:1D:D9:7A:1E:48
+  name: iPhone
+  picture:
+  track: false
+
+
+
+samsung:
+  hide_if_away: false
+  icon:
+  mac: 7C:64:56:1A:22:D7
+  name: Samsung
+  picture:
+  track: false
+
+mikeiphone_mikeiphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: MikeiPhone
+  picture:
+  track: false
+
+billyiphone_billyiphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: BillyiPhone
+  picture:
+  track: false
+
+tayloriphone_tayloriphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: TayloriPhone
+  picture:
+  track: false
+
+daniiphone_daniiphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: DaniiPhone
+  picture:
+  track: false
+
+
+jamessiphone:
+  hide_if_away: false
+  icon:
+  mac: B0:19:C6:7B:0D:CD
+  name: Jamess-iPhone
+  picture:
+  track: false
+
+owen:
+  hide_if_away: false
+  icon:
+  mac: 80:B0:3D:C1:ED:11
+  name: Owen
+  picture:
+  track: false
+
+iphone_3:
+  hide_if_away: false
+  icon:
+  mac: 8C:85:90:DA:1F:12
+  name: iPhone
+  picture:
+  track: false
+
+karensiphone2:
+  hide_if_away: false
+  icon:
+  mac: 80:00:6E:94:5F:80
+  name: Karens-iPhone-2
+  picture:
+  track: false
+
+thomassiphone:
+  hide_if_away: false
+  icon:
+  mac: 7C:50:49:63:DA:BF
+  name: Thomass-iPhone
+  picture:
+  track: false
+
+iphone4:
+  hide_if_away: false
+  icon:
+  mac: C8:1E:E7:23:2C:19
+  name: iPhone-4
+  picture:
+  track: false
+
+timothynsiphone:
+  hide_if_away: false
+  icon:
+  mac: A8:BE:27:99:23:C3
+  name: TimothynsiPhone
+  picture:
+  track: false
+
+mike_iphone_ping:
+  hide_if_away: false
+  icon:
+  mac:
+  name: mike iphone ping
+  picture:
+  track: false
+
+sonoff4042:
+  hide_if_away: false
+  icon:
+  mac: B4:E6:2D:25:2F:CA
+  name: sonoff-4042
+  picture:
+  track: false
+
+sonoff5553:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:A7:D5:B1
+  name: sonoff-5553
+  picture:
+  track: false
+
+sonoff43197:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:A7:CC:7D
+  name: sonoff4-3197
+  picture:
+  track: false
+
+linksys57640:
+  hide_if_away: false
+  icon:
+  mac: 20:AA:4B:72:FD:6A
+  name: Linksys57640
+  picture:
+  track: false
+
+linksys57640_2:
+  hide_if_away: false
+  icon:
+  mac: 20:AA:4B:72:FD:6B
+  name: Linksys57640
+  picture:
+  track: false
+
+26f5a23a71ea:
+  hide_if_away: false
+  icon:
+  mac: 26:F5:A2:3A:71:EA
+  name: 26:F5:A2:3A:71:EA
+  picture:
+  track: false
+
+26f5a23a71ec:
+  hide_if_away: false
+  icon:
+  mac: 26:F5:A2:3A:71:EC
+  name: 26:F5:A2:3A:71:EC
+  picture:
+  track: false
+
+re64001e9:
+  hide_if_away: false
+  icon:
+  mac: 24:F5:A2:3A:71:E9
+  name: RE6400-1E9
+  picture:
+  track: false
+
+beacon_beacon2:
+  hide_if_away: false
+  icon:
+  mac:
+  name: beacon2
+  picture:
+  track: false
+
+beacon_beacon1:
+  hide_if_away: false
+  icon:
+  mac:
+  name: beacon1
+  picture:
+  track: false
+
+dani_iphone_ping:
+  hide_if_away: false
+  icon:
+  mac:
+  name: dani iphone ping
+  picture:
+  track: false
+
+michaelsiphone:
+  hide_if_away: false
+  icon:
+  mac: 64:5A:ED:1E:58:06
+  name: Michaels-iPhone
+  picture:
+  track: false
+
+evansiphone:
+  hide_if_away: false
+  icon:
+  mac: B8:41:A4:9E:0A:01
+  name: Evans-iPhone
+  picture:
+  track: false
+
+ipad:
+  hide_if_away: false
+  icon:
+  mac: 34:AB:37:3D:67:0B
+  name: iPad
+  picture:
+  track: false
+
+iphone_4:
+  hide_if_away: false
+  icon:
+  mac: D0:25:98:65:F6:02
+  name: iPhone
+  picture:
+  track: false
+
+mikesipod:
+  hide_if_away: false
+  icon:
+  mac: B0:34:95:CE:D3:E8
+  name: Mikes-iPod
+  picture:
+  track: false
+
+rushsiphone:
+  hide_if_away: false
+  icon:
+  mac: DC:A9:04:22:FC:47
+  name: Rushs-iPhone
+  picture:
+  track: false
+
+shanesiphone:
+  hide_if_away: false
+  icon:
+  mac: 4C:32:75:A0:D4:11
+  name: Shanes-iPhone
+  picture:
+  track: false
+
+902e1cb38b75:
+  hide_if_away: false
+  icon:
+  mac: 90:2E:1C:B3:8B:75
+  name: 90:2E:1C:B3:8B:75
+  picture:
+  track: false
+
+iphone_5:
+  hide_if_away: false
+  icon:
+  mac: 9C:E3:3F:35:E8:3E
+  name: iPhone
+  picture:
+  track: false
+
+goatcheech:
+  hide_if_away: false
+  icon:
+  mac: A0:56:F3:9E:AA:C6
+  name: GOAT-Cheech
+  picture:
+  track: false
+
+ipad_2:
+  hide_if_away: false
+  icon:
+  mac: 70:DE:E2:2B:D6:EF
+  name: iPad
+  picture:
+  track: false
+
+mikesipad_2:
+  hide_if_away: false
+  icon:
+  mac: BC:3B:AF:BE:1A:41
+  name: Mikes-iPad
+  picture:
+  track: false
+
+androidc644b7428206a2cd:
+  hide_if_away: false
+  icon:
+  mac: FC:C2:DE:9E:5F:AD
+  name: android-c644b7428206a2cd
+  picture:
+  track: false
+
+mw:
+  hide_if_away: false
+  icon:
+  mac: 00:56:CD:97:46:54
+  name: mw
+  picture:
+  track: false
+
+lilysiphone:
+  hide_if_away: false
+  icon:
+  mac: 5C:1D:D9:E2:4E:E5
+  name: Lilys-iPhone
+  picture:
+  track: false
+
+taylorsmbp:
+  hide_if_away: false
+  icon:
+  mac: 8C:85:90:8F:68:E3
+  name: Taylors-MBP
+  picture:
+  track: false
+
+leviton_device_758e:
+  hide_if_away: false
+  icon:
+  mac: 00:07:A6:0B:8D:58
+  name: Leviton Device 758E
+  picture:
+  track: false
+
+taylorsplewatch:
+  hide_if_away: false
+  icon:
+  mac: 40:4D:7F:4C:85:05
+  name: TaylorspleWatch
+  picture:
+  track: false
+
+iphone_6:
+  hide_if_away: false
+  icon:
+  mac: 88:19:08:A1:15:3B
+  name: iPhone
+  picture:
+  track: false
+
+jordansiphone:
+  hide_if_away: false
+  icon:
+  mac: B8:C1:11:20:7A:88
+  name: Jordans-iPhone
+  picture:
+  track: false
+
+bellamensche:
+  hide_if_away: false
+  icon:
+  mac: A8:BE:27:61:0F:C8
+  name: Bella-Mensche
+  picture:
+  track: false
+
+iphone_7:
+  hide_if_away: false
+  icon:
+  mac: C8:3C:85:6F:74:13
+  name: iPhone
+  picture:
+  track: false
+
+iphone_8:
+  hide_if_away: false
+  icon:
+  mac: B4:9C:DF:57:9F:41
+  name: iPhone
+  picture:
+  track: false
+
+lindseysiphone:
+  hide_if_away: false
+  icon:
+  mac: 18:F1:D8:88:15:97
+  name: Lindseys-iPhone
+  picture:
+  track: false
+
+yannasiphone:
+  hide_if_away: false
+  icon:
+  mac: 20:EE:28:D4:93:40
+  name: Yannas-iPhone
+  picture:
+  track: false
+
+esp_60a4b9:
+  hide_if_away: false
+  icon:
+  mac: 84:F3:EB:60:A4:B9
+  name: ESP 60A4B9
+  picture:
+  track: false
+
+esp_4f4503:
+  hide_if_away: false
+  icon:
+  mac: B4:E6:2D:4F:45:03
+  name: ESP 4F4503
+  picture:
+  track: false
+
+mimasipad:
+  hide_if_away: false
+  icon:
+  mac: 9C:04:EB:4F:17:A5
+  name: Mimas-Ipad
+  picture:
+  track: false
+
+danisapplewatch:
+  hide_if_away: false
+  icon:
+  mac: 60:9A:C1:2F:BB:B3
+  name: DanisAppleWatch
+  picture:
+  track: false
+
+leviton_device_cd19:
+  hide_if_away: false
+  icon:
+  mac: 00:07:A6:08:DF:2F
+  name: Leviton Device CD19
+  picture:
+  track: false
+
+leviton_device_fe9b:
+  hide_if_away: false
+  icon:
+  mac: 00:07:A6:0C:19:7A
+  name: Leviton Device FE9B
+  picture:
+  track: false
+
+a438cc9c62ae:
+  hide_if_away: false
+  icon:
+  mac: A4:38:CC:9C:62:AE
+  name: A4:38:CC:9C:62:AE
+  picture:
+  track: false
+
+ipodtouch:
+  hide_if_away: false
+  icon:
+  mac: DC:D3:A2:A8:61:08
+  name: iPod-touch
+  picture:
+  track: false
+
+kalliopisiphone:
+  hide_if_away: false
+  icon:
+  mac: 64:70:33:41:30:80
+  name: KalliopisiPhone
+  picture:
+  track: false
+
+taylorsiphone:
+  hide_if_away: false
+  icon:
+  mac: 90:E1:7B:0A:E6:9D
+  name: Taylors-iPhone
+  picture:
+  track: false
+
+tracysiphone2:
+  hide_if_away: false
+  icon:
+  mac: 78:31:C1:1B:C1:C3
+  name: Tracys-iPhone-2
+  picture:
+  track: false
+
+galaxys8:
+  hide_if_away: false
+  icon:
+  mac: DC:EF:CA:E8:D6:7A
+  name: Galaxy-S8
+  picture:
+  track: false
+
+lorenzosiphone:
+  hide_if_away: false
+  icon:
+  mac: 40:83:1D:9C:41:7B
+  name: Lorenzos-iPhone
+  picture:
+  track: false
+
+danisiphone:
+  hide_if_away: false
+  icon:
+  mac: A4:D9:31:01:2C:EB
+  name: Danis-iPhone
+  picture:
+  track: false
+
+iphone_9:
+  hide_if_away: false
+  icon:
+  mac: 64:B0:A6:A3:03:7E
+  name: iPhone
+  picture:
+  track: false
+
+jacksapplewatch:
+  hide_if_away: false
+  icon:
+  mac: C4:84:66:20:43:70
+  name: JacksAppleWatch
+  picture:
+  track: false
+
+danisipad:
+  hide_if_away: false
+  icon:
+  mac: CC:44:63:F3:1F:A2
+  name: Danis-iPad
+  picture:
+  track: false
+
+tasiphone:
+  hide_if_away: false
+  icon:
+  mac: 00:DB:70:6D:1B:1B
+  name: TAs-iPhone
+  picture:
+  track: false
+
+ipad2:
+  hide_if_away: false
+  icon:
+  mac: CC:44:63:E2:3C:A8
+  name: iPad-2
+  picture:
+  track: false
+
+anonymous:
+  hide_if_away: false
+  icon:
+  mac: B8:63:4D:43:62:DD
+  name: Anonymous
+  picture:
+  track: false
+
+iphone_10:
+  hide_if_away: false
+  icon:
+  mac: 34:08:BC:E8:D0:8A
+  name: iPhone
+  picture:
+  track: false
+
+karensiphone:
+  hide_if_away: false
+  icon:
+  mac: FC:D8:48:DB:11:01
+  name: Karens-iPhone
+  picture:
+  track: false
+
+nicolesiphone:
+  hide_if_away: false
+  icon:
+  mac: 54:33:CB:49:ED:9E
+  name: Nicoles-iPhone
+  picture:
+  track: false
+
+bensiphone:
+  hide_if_away: false
+  icon:
+  mac: 18:F6:43:09:14:08
+  name: Bens-iPhone
+  picture:
+  track: false
+
+samsungsmg935a:
+  hide_if_away: false
+  icon:
+  mac: 60:F1:89:12:5C:7B
+  name: SAMSUNG-SM-G935A
+  picture:
+  track: false
+
+christorsiphone:
+  hide_if_away: false
+  icon:
+  mac: 98:10:E8:56:EF:E7
+  name: ChristorsIPhone
+  picture:
+  track: false
+
+jacksiphone:
+  hide_if_away: false
+  icon:
+  mac: 40:26:19:14:4F:57
+  name: Jacks-iPhone
+  picture:
+  track: false
+
+justinsiphone:
+  hide_if_away: false
+  icon:
+  mac: 90:B0:ED:E3:86:6B
+  name: Justins-iPhone
+  picture:
+  track: false
+
+laptop2dfq3r42:
+  hide_if_away: false
+  icon:
+  mac: 00:FF:F8:F8:72:46
+  name: LAPTOP-2DFQ3R42
+  picture:
+  track: false
+
+lorenzosiphone_2:
+  hide_if_away: false
+  icon:
+  mac: 40:26:19:26:C2:40
+  name: Lorenzos-iPhone
+  picture:
+  track: false
+
+calsiphone:
+  hide_if_away: false
+  icon:
+  mac: 5C:1D:D9:56:24:23
+  name: Cals-iPhone
+  picture:
+  track: false
+
+iphone_11:
+  hide_if_away: false
+  icon:
+  mac: 28:FF:3C:70:20:77
+  name: iPhone
+  picture:
+  track: false
+
+iphone_12:
+  hide_if_away: false
+  icon:
+  mac: BC:FE:D9:3C:20:4A
+  name: iPhone
+  picture:
+  track: false
+
+noellesiphone:
+  hide_if_away: false
+  icon:
+  mac: F8:38:80:D6:39:71
+  name: Noelles-iPhone
+  picture:
+  track: false
+
+iphone_13:
+  hide_if_away: false
+  icon:
+  mac: 34:08:BC:E9:DD:42
+  name: iPhone
+  picture:
+  track: false
+
+kyliesiphone:
+  hide_if_away: false
+  icon:
+  mac: 38:53:9C:03:57:3E
+  name: Kylies-iphone
+  picture:
+  track: false
+
+mattsiphone:
+  hide_if_away: false
+  icon:
+  mac: 14:D0:0D:AD:15:0C
+  name: Matts-iphone
+  picture:
+  track: false
+
+yaheard:
+  hide_if_away: false
+  icon:
+  mac: 2C:F0:A2:24:F5:46
+  name: Ya-heard
+  picture:
+  track: false
+
+iphone_14:
+  hide_if_away: false
+  icon:
+  mac: B0:70:2D:0E:53:42
+  name: iPhone
+  picture:
+  track: false
+
+mattsiphone_2:
+  hide_if_away: false
+  icon:
+  mac: A0:56:F3:51:62:C2
+  name: Matts-iphone
+  picture:
+  track: false
+
+sonoff64508:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:A7:F1:9C
+  name: sonoff6-4508
+  picture:
+  track: false
+
+iphone_15:
+  hide_if_away: false
+  icon:
+  mac: 14:D0:0D:32:25:16
+  name: iPhone
+  picture:
+  track: false
+
+yogacole_m:
+  hide_if_away: false
+  icon:
+  mac: 88:B1:11:0B:3E:84
+  name: YOGA-COLE M
+  picture:
+  track: false
+
+christorsiphone_2:
+  hide_if_away: false
+  icon:
+  mac: 70:3C:69:92:5F:9C
+  name: ChristorsIPhone
+  picture:
+  track: false
+
+timothynsiphone_2:
+  hide_if_away: false
+  icon:
+  mac: F4:AF:E7:D3:9F:EB
+  name: TimothynsiPhone
+  picture:
+  track: false
+
+madelynsiphone:
+  hide_if_away: false
+  icon:
+  mac: BC:9F:EF:B2:CF:5F
+  name: Madelyns-iPhone
+  picture:
+  track: false
+
+mw_2:
+  hide_if_away: false
+  icon:
+  mac: C0:E8:62:F3:21:F2
+  name: mw
+  picture:
+  track: false
+
+jamessiphone_2:
+  hide_if_away: false
+  icon:
+  mac: 40:83:1D:E3:45:58
+  name: Jamess-iPhone
+  picture:
+  track: false
+
+anonymous_2:
+  hide_if_away: false
+  icon:
+  mac: '30:57:14:53:05:48'
+  name: Anonymous
+  picture:
+  track: false
+
+natesiphone:
+  hide_if_away: false
+  icon:
+  mac: C0:9A:D0:83:78:B9
+  name: Nates-iphone
+  picture:
+  track: false
+
+stephanesiphone:
+  hide_if_away: false
+  icon:
+  mac: F8:4E:73:6A:A0:3C
+  name: StephanesiPhone
+  picture:
+  track: false
+
+ipad_3:
+  hide_if_away: false
+  icon:
+  mac: 4C:6B:E8:EE:38:B6
+  name: iPad
+  picture:
+  track: false
+
+mikesiphone:
+  hide_if_away: false
+  icon:
+  mac: 14:87:6A:EE:F1:2E
+  name: Mikes-iPhone
+  picture:
+  track: false
+
+l05082591:
+  hide_if_away: false
+  icon:
+  mac: 20:79:18:34:B5:75
+  name: L05082591
+  picture:
+  track: false
+
+taylor_roses_roku:
+  hide_if_away: false
+  icon:
+  mac: D8:31:34:30:DA:2E
+  name: Taylor Rose's Roku
+  picture:
+  track: false
